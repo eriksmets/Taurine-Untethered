@@ -16,7 +16,7 @@ struct TaurineApp: App {
         print("Taurine 2")
         let args = CommandLine.arguments
         print(args)
-        if args.count => 2 {
+        if args.count >= 2 {
             if args[1] == "jailbreak" {
                 print("Jailbreaking...")
             }
