@@ -65,6 +65,8 @@ class ViewController: UIViewController, ElectraUI {
         if isJailbroken() {
             jailbreakButton?.isEnabled = false
             jailbreakButton?.setTitle("Jailbroken", for: .normal)
+        } else {
+            jailbreak()
         }
         
         if getSafeEntitlements().count < 3 {
