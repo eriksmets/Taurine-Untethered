@@ -66,7 +66,6 @@ class ViewController: UIViewController, ElectraUI {
             jailbreakButton?.isEnabled = false
             jailbreakButton?.setTitle("Jailbroken", for: .normal)
         } else {
-            Thread.sleep(forTimeInterval: 0.5)
             print("Jailbreaking")
             jailbreak()
         }
