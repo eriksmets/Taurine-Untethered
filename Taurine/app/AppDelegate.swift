@@ -17,8 +17,8 @@ struct Main {
                     print("Jailbreaking... TEST: 7")
                     UIApplication.shared.isIdleTimerDisabled = true
                     jailbreak()
-                    while true {
-                    }
+                }
+                while true {
                 }
             } else {
                 TaurineApp.main()
@@ -67,7 +67,7 @@ func jailbreak() {
             return
         }
         let electra = Electra(ui: viewController, any_proc: any_proc, enable_tweaks: enableTweaks, restore_rootfs: restoreRootFs, nonce: generator)
-        let err = electra.jailbreak(
+        let err = electra.jailbreak()
     }
 }
 
