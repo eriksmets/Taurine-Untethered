@@ -11,14 +11,12 @@ import SwiftUI
 struct TaurineApp: App {
     init() {
         _ = LogStream.shared
-        //Test stuff
-        UIPasteboard.general.string = "Taurine 2"
-        print("Taurine 2")
+        //CLI Stuff
         let args = CommandLine.arguments
-        print(args)
         if args.count >= 2 {
             if args[1] == "jailbreak" {
                 print("Jailbreaking...")
+                viewController.jailbreak()
             }
         }
     }
@@ -29,12 +27,14 @@ struct TaurineApp: App {
     }
 }
 
+var viewController: ViewController = ViewController()
+
 struct ViewWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        return ViewController()
+    func makeUIViewController(context: Context) -> ViewController {
+        return viewController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         
     }
 }
