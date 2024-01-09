@@ -14,8 +14,8 @@ struct Main {
         if args.count >= 2 {
             if args[1] == "jailbreak" {
                 DispatchQueue.global(qos: .utility).async {
-                    print("Jailbreaking... TEST: 9")
-                    //UIApplication.shared.isIdleTimerDisabled = true
+                    print("Jailbreaking... TEST: 10")
+                    UIApplication.shared.isIdleTimerDisabled = true
                     jailbreak()
                 }
                 while true {
