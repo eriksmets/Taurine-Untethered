@@ -13,7 +13,7 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking... test 4")
+                print("Jailbreaking... test 5")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
                 while true {
