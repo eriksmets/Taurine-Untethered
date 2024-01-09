@@ -13,10 +13,9 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking... test 3")
+                print("Jailbreaking... test 4")
                 UIApplication.shared.isIdleTimerDisabled = true
-                UserDefaults.standard.set("kfdSmith", forKey: "exploit")
-                ViewController().jailbreak()
+                jailbreak()
             } else {
                 TaurineApp.main()
             }
@@ -41,7 +40,7 @@ func jailbreak() {
     let enableTweaks = true
     let restoreRootFs = false
     let generator = NonceManager.shared.currentValue
-    usleep(500 * 1000)
+    //usleep(500 * 1000)
     var hasKernelRw = false
     var any_proc = UInt64(0)
     print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
