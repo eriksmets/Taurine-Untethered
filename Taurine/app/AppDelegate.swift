@@ -34,12 +34,12 @@ struct TaurineApp: App {
 }
 
 func jailbreak() {
-        let enableTweaks = true
-        let restoreRootFs = false
-        let generator = NonceManager.shared.currentValue
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            DispatchQueue.global(qos: .userInteractive).async {
-                usleep(500 * 1000)
+    let enableTweaks = true
+    let restoreRootFs = false
+    let generator = NonceManager.shared.currentValue
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            usleep(500 * 1000)
                 var hasKernelRw = false
                 var any_proc = UInt64(0)
                 switch ExploitManager.shared.chosenExploit {
@@ -75,17 +75,11 @@ func jailbreak() {
                 guard hasKernelRw else {
                     return
                 }
-                let electra = Electra(ui: self,
-                                      any_proc: any_proc,
-                                      enable_tweaks: enableTweaks,
-                                      restore_rootfs: restoreRootFs,
-                                      nonce: generator)
-
-                
+                let electra = Electra(ui: viewController, any_proc: any_proc, enable_tweaks: enableTweaks, restore_rootfs: restoreRootFs, nonce: generator)
                 let err = electra.jailbreak()
-            }
         }
     }
+}
 
 var viewController: ViewController = ViewController()
 
