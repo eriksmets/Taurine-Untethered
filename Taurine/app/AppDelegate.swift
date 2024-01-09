@@ -9,8 +9,7 @@ import SwiftUI
 
 @main
 struct TaurineApp: App {
-    init() {
-        _ = LogStream.shared
+    func main() {
         //CLI Stuff
         let args = CommandLine.arguments
         if args.count >= 2 {
@@ -25,6 +24,9 @@ struct TaurineApp: App {
                 print("Jailbreaking...")
             }
         }
+    }
+    init() {
+        _ = LogStream.shared
     }
     var body: some Scene {
         WindowGroup {
