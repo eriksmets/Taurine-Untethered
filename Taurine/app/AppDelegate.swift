@@ -15,7 +15,7 @@ struct Main {
             if args[1] == "jailbreak" {
                 print("Jailbreaking... test 3")
                 UIApplication.shared.isIdleTimerDisabled = true
-                ExploitManager.shared.chosenExploit = .kfdSmith
+                UserDefaults.standard.set("kfdSmith", forKey: "exploit")
                 ViewController().jailbreak()
             } else {
                 TaurineApp.main()
