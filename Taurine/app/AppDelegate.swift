@@ -13,7 +13,7 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking... kfd smith")
+                print("Jailbreaking...")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
             } else {
@@ -59,11 +59,11 @@ func jailbreak() {
     let err = electra.jailbreak()
 }
 
-
 struct ViewWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         return ViewController()
     }
+
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         
     }
