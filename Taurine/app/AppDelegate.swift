@@ -40,12 +40,14 @@ struct TaurineApp: App {
 }
 
 func jailbreak() {
-    print("test")
+    print("test 1")
     let enableTweaks = true
     let restoreRootFs = false
     let generator = NonceManager.shared.currentValue
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        print("test 2")
         usleep(500 * 1000)
+        print("test 3")
         var hasKernelRw = false
         var any_proc = UInt64(0)
         switch ExploitManager.shared.chosenExploit {
@@ -76,7 +78,8 @@ func jailbreak() {
                 hasKernelRw = true
             }
         default:
-            fatalError("Unable to get kernel r/w")
+            print("Unable to get kernel r/w")
+            return
         }
         guard hasKernelRw else {
             return
