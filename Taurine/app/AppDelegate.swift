@@ -1,5 +1,5 @@
 //
-//  TaurineApp.swift
+//  AppDelegate.swift
 //  taurine
 //
 //  Created by AppInstaller iOS on 01/09/2024.
