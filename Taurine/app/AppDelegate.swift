@@ -8,29 +8,27 @@
 import SwiftUI
 
 @main
-struct TaurineApp: App {
-    init() {
-        _ = LogStream.shared
-        //CLI Stuff
+struct Main {
+    static func main() {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
                 print("Jailbreaking... 2")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
-                while test {
-                }
-            } else if args[1] == "jailbreak2" {
-                print("Jailbreaking...")
-                jailbreak()
-                while test {
-                }
-            } else if args[1] == "jailbreak3" {
-                print("Jailbreaking...")
-                while test {
-                }
+            } else {
+                TaurineApp.main()
             }
+        } else {
+            TaurineApp.main()
         }
+    }
+}
+
+@main
+struct TaurineApp: App {
+    init() {
+        _ = LogStream.shared
     }
     var body: some Scene {
         WindowGroup {
@@ -39,16 +37,11 @@ struct TaurineApp: App {
     }
 }
 
-var test = true
-
 func jailbreak() {
-    print("test 1")
     let enableTweaks = true
     let restoreRootFs = false
     let generator = NonceManager.shared.currentValue
-    print("test 2")
     usleep(500 * 1000)
-    print("test 3")
     var hasKernelRw = false
     var any_proc = UInt64(0)
     switch ExploitManager.shared.chosenExploit {
@@ -87,7 +80,6 @@ func jailbreak() {
     }
     let electra = Electra(ui: viewController, any_proc: any_proc, enable_tweaks: enableTweaks, restore_rootfs: restoreRootFs, nonce: generator)
     let err = electra.jailbreak()
-    test = false
 }
 
 var viewController: ViewController = ViewController()
