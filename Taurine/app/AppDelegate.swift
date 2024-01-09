@@ -14,8 +14,8 @@ struct Main {
         if args.count >= 2 {
             if args[1] == "jailbreak" {
                 DispatchQueue.global(qos: .utility).async {
-                    print("Jailbreaking... TEST: 8")
-                    UIApplication.shared.isIdleTimerDisabled = true
+                    print("Jailbreaking... TEST: 9")
+                    //UIApplication.shared.isIdleTimerDisabled = true
                     jailbreak()
                 }
                 while true {
@@ -50,9 +50,9 @@ func jailbreak() {
     var hasKernelRw = false
     var any_proc = UInt64(0)
     print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
-    LogStream.shared.pause()
+    //LogStream.shared.pause()
     let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
-    LogStream.shared.resume()
+    //LogStream.shared.resume()
     print("3")
     if ret != 0 {
         print("Successfully exploited kernel!");
