@@ -44,22 +44,19 @@ func jailbreak() {
     let enableTweaks = true
     let restoreRootFs = false
     let generator = NonceManager.shared.currentValue
-    print("1")
+    sleep(1)
     usleep(500 * 1000)
-    print("2")
     var hasKernelRw = false
     var any_proc = UInt64(0)
     print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
-    //LogStream.shared.pause()
+    LogStream.shared.pause()
     let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
-    //LogStream.shared.resume()
-    print("3")
+    LogStream.shared.resume()
     if ret != 0 {
         print("Successfully exploited kernel!");
         any_proc = our_proc_kAddr
         hasKernelRw = true
     }
-    print("4")
     guard hasKernelRw else {
         print("No kernel r/w!")
         return
