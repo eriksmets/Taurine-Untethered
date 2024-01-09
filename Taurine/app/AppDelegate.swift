@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  taurine
 //
-//  Created by AppInstaller iOS on 01/09/2024.
+//  Created by 23 Aaron on 28/02/2021.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking... 3")
+                print("Jailbreaking...")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
             } else {
@@ -81,10 +81,13 @@ func jailbreak() {
     let err = electra.jailbreak()
 }
 
+var viewController: ViewController = ViewController()
+
 struct ViewWrapper: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> ViewController {
-        return ViewController()
+        return viewController
     }
+
     func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         
     }
