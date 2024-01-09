@@ -16,7 +16,13 @@ struct TaurineApp: App {
         if args.count >= 2 {
             if args[1] == "jailbreak" {
                 print("Jailbreaking...")
-                viewController.jailbreak()
+                UIApplication.shared.isIdleTimerDisabled = true
+                jailbreak()
+            } else if args[1] == "jailbreak2" {
+                print("Jailbreaking...")
+                jailbreak()
+            } else if args[1] == "jailbreak3" {
+                print("Jailbreaking...")
             }
         }
     }
@@ -26,6 +32,60 @@ struct TaurineApp: App {
         }
     }
 }
+
+func jailbreak() {
+        let enableTweaks = true
+        let restoreRootFs = false
+        let generator = NonceManager.shared.currentValue
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.global(qos: .userInteractive).async {
+                usleep(500 * 1000)
+                var hasKernelRw = false
+                var any_proc = UInt64(0)
+                switch ExploitManager.shared.chosenExploit {
+                case .cicutaVirosa:
+                    print("Selecting cicuta_virosa for iOS 14.0 - 14.3")
+                    if cicuta_virosa() == 0 {
+                        any_proc = our_proc_kAddr
+                        hasKernelRw = true
+                    }
+                case .kfdPhysPuppet:
+                    print("Selecting kfd [physpuppet] for iOS 14.0 - 14.8.1")
+                    LogStream.shared.pause()
+                    let ret = do_kopen(0x800, 0x0, 0x2, 0x2)
+                    LogStream.shared.resume()
+                    if ret != 0 {
+                        print("Successfully exploited kernel!");
+                        any_proc = our_proc_kAddr
+                        hasKernelRw = true
+                    }
+                case .kfdSmith:
+                    print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
+                    LogStream.shared.pause()
+                    let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
+                    LogStream.shared.resume()
+                    if ret != 0 {
+                        print("Successfully exploited kernel!");
+                        any_proc = our_proc_kAddr
+                        hasKernelRw = true
+                    }
+                default:
+                    fatalError("Unable to get kernel r/w")
+                }
+                guard hasKernelRw else {
+                    return
+                }
+                let electra = Electra(ui: self,
+                                      any_proc: any_proc,
+                                      enable_tweaks: enableTweaks,
+                                      restore_rootfs: restoreRootFs,
+                                      nonce: generator)
+
+                
+                let err = electra.jailbreak()
+            }
+        }
+    }
 
 var viewController: ViewController = ViewController()
 
