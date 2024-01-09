@@ -16,6 +16,8 @@ struct Main {
                 print("Jailbreaking... test 4")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
+                while true {
+                }
             } else {
                 TaurineApp.main()
             }
