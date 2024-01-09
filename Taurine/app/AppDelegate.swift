@@ -13,9 +13,10 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking... 2")
+                print("Jailbreaking... test 3")
                 UIApplication.shared.isIdleTimerDisabled = true
-                jailbreak()
+                ExploitManager.shared.chosenExploit = .kfdSmith
+                ViewController().jailbreak()
             } else {
                 TaurineApp.main()
             }
