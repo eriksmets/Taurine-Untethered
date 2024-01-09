@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct TaurineApp: App {
-    func main() {
+    init() {
+        _ = LogStream.shared
         //CLI Stuff
         let args = CommandLine.arguments
         if args.count >= 2 {
@@ -17,16 +18,19 @@ struct TaurineApp: App {
                 print("Jailbreaking...")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
+                while true {
+                }
             } else if args[1] == "jailbreak2" {
                 print("Jailbreaking...")
                 jailbreak()
+                while true {
+                }
             } else if args[1] == "jailbreak3" {
                 print("Jailbreaking...")
+                while true {
+                }
             }
         }
-    }
-    init() {
-        _ = LogStream.shared
     }
     var body: some Scene {
         WindowGroup {
