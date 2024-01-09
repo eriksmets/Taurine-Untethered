@@ -13,7 +13,7 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking...")
+                print("Jailbreaking... 2")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
             } else {
@@ -47,11 +47,13 @@ func jailbreak() {
     LogStream.shared.pause()
     let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
     LogStream.shared.resume()
+    print("1")
     if ret != 0 {
         print("Successfully exploited kernel!");
         any_proc = our_proc_kAddr
         hasKernelRw = true
     }
+    print("2")
     guard hasKernelRw else {
         print("No kernel r/w!")
         return
