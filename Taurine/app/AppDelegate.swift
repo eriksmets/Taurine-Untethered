@@ -13,7 +13,7 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                print("Jailbreaking...")
+                print("Jailbreaking... 3")
                 UIApplication.shared.isIdleTimerDisabled = true
                 jailbreak()
             } else {
@@ -43,14 +43,36 @@ func jailbreak() {
     usleep(500 * 1000)
     var hasKernelRw = false
     var any_proc = UInt64(0)
-    print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
-    LogStream.shared.pause()
-    let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
-    LogStream.shared.resume()
-    if ret != 0 {
-        print("Successfully exploited kernel!");
-        any_proc = our_proc_kAddr
-        hasKernelRw = true
+    switch ExploitManager.shared.chosenExploit {
+    case .cicutaVirosa:
+        print("Selecting cicuta_virosa for iOS 14.0 - 14.3")
+        if cicuta_virosa() == 0 {
+            any_proc = our_proc_kAddr
+            hasKernelRw = true
+        }
+    case .kfdPhysPuppet:
+        print("Selecting kfd [physpuppet] for iOS 14.0 - 14.8.1")
+        LogStream.shared.pause()
+        let ret = do_kopen(0x800, 0x0, 0x2, 0x2)
+        LogStream.shared.resume()
+        if ret != 0 {
+            print("Successfully exploited kernel!");
+            any_proc = our_proc_kAddr
+            hasKernelRw = true
+        }
+    case .kfdSmith:
+        print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
+        LogStream.shared.pause()
+        let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
+        LogStream.shared.resume()
+        if ret != 0 {
+            print("Successfully exploited kernel!");
+            any_proc = our_proc_kAddr
+            hasKernelRw = true
+        }
+    default:
+        print("Unable to get kernel r/w")
+        return
     }
     guard hasKernelRw else {
         return
@@ -60,11 +82,10 @@ func jailbreak() {
 }
 
 struct ViewWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> ViewController {
         return ViewController()
     }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         
     }
 }
