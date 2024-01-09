@@ -53,6 +53,7 @@ func jailbreak() {
         hasKernelRw = true
     }
     guard hasKernelRw else {
+        print("No kernel r/w!")
         return
     }
     let electra = Electra(ui: viewController, any_proc: any_proc, enable_tweaks: enableTweaks, restore_rootfs: restoreRootFs, nonce: generator)
