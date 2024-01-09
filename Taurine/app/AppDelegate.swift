@@ -13,11 +13,11 @@ struct Main {
         let args = CommandLine.arguments
         if args.count >= 2 {
             if args[1] == "jailbreak" {
-                DispatchQueue.global(qos: .utility).async {
-                    print("Jailbreaking... TEST: 11")
+                //DispatchQueue.global(qos: .utility).async {
+                    print("Jailbreaking... TEST: 12")
                     //UIApplication.shared.isIdleTimerDisabled = true
                     jailbreak()
-                }
+                //}
                 //while true {
                 //}
             } else {
