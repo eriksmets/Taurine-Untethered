@@ -25,7 +25,6 @@ struct Main {
     }
 }
 
-@main
 struct TaurineApp: App {
     init() {
         _ = LogStream.shared
