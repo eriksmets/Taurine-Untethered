@@ -11,17 +11,9 @@ import SwiftUI
 struct Main {
     static func main() {
         let args = CommandLine.arguments
-        if args.count >= 2 {
+        if args.count > 1 {
             if args[1] == "jailbreak" {
-                //DispatchQueue.global(qos: .utility).async {
-                    print("Jailbreaking... TEST: 12")
-                    //UIApplication.shared.isIdleTimerDisabled = true
-                    jailbreak()
-                //}
-                //while true {
-                //}
-            } else {
-                TaurineApp.main()
+                jailbreak()
             }
         } else {
             TaurineApp.main()
@@ -44,10 +36,9 @@ func jailbreak() {
     let enableTweaks = true
     let restoreRootFs = false
     let generator = NonceManager.shared.currentValue
-    sleep(1)
-    usleep(500 * 1000)
     var hasKernelRw = false
     var any_proc = UInt64(0)
+    sleep(5)
     print("Selecting kfd [smith] for iOS 14.0 - 14.8.1")
     LogStream.shared.pause()
     let ret = do_kopen(0x800, 0x1, 0x2, 0x2)
