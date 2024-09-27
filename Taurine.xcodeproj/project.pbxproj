@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4355C31E2CA686B60079A539 /* exploit.c in Sources */ = {isa = PBXBuildFile; fileRef = 4355C3132CA686B60079A539 /* exploit.c */; };
+		4355C31F2CA686B60079A539 /* info.m in Sources */ = {isa = PBXBuildFile; fileRef = 4355C3152CA686B60079A539 /* info.m */; };
+		4355C3202CA686B60079A539 /* surface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4355C31C2CA686B60079A539 /* surface.m */; };
+		4355C3212CA686B60079A539 /* puaf.c in Sources */ = {isa = PBXBuildFile; fileRef = 4355C31A2CA686B60079A539 /* puaf.c */; };
+		4355C3222CA686B60079A539 /* krw.c in Sources */ = {isa = PBXBuildFile; fileRef = 4355C3182CA686B60079A539 /* krw.c */; };
 		8722909125D5BC41008E11FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8722909025D5BC41008E11FA /* Assets.xcassets */; };
 		8773B95D25EA2F640025E520 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8773B95C25EA2F640025E520 /* IOKit.framework */; };
 		E1877E0826A8D376000890AD /* ColourPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1877E0726A8D376000890AD /* ColourPickerCell.swift */; };
@@ -139,6 +144,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4355C3122CA686B60079A539 /* exploit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exploit.h; sourceTree = "<group>"; };
+		4355C3132CA686B60079A539 /* exploit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
+		4355C3142CA686B60079A539 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
+		4355C3152CA686B60079A539 /* info.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = info.m; sourceTree = "<group>"; };
+		4355C3162CA686B60079A539 /* iokit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iokit.h; sourceTree = "<group>"; };
+		4355C3172CA686B60079A539 /* krw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = krw.h; sourceTree = "<group>"; };
+		4355C3182CA686B60079A539 /* krw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = krw.c; sourceTree = "<group>"; };
+		4355C3192CA686B60079A539 /* puaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = puaf.h; sourceTree = "<group>"; };
+		4355C31A2CA686B60079A539 /* puaf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = puaf.c; sourceTree = "<group>"; };
+		4355C31B2CA686B60079A539 /* surface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = surface.h; sourceTree = "<group>"; };
+		4355C31C2CA686B60079A539 /* surface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = surface.m; sourceTree = "<group>"; };
 		8722908125D5BC40008E11FA /* Taurine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taurine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8722909025D5BC41008E11FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8722909325D5BC41008E11FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -288,6 +304,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4355C31D2CA686B60079A539 /* vertex */ = {
+			isa = PBXGroup;
+			children = (
+				4355C3122CA686B60079A539 /* exploit.h */,
+				4355C3132CA686B60079A539 /* exploit.c */,
+				4355C3142CA686B60079A539 /* info.h */,
+				4355C3152CA686B60079A539 /* info.m */,
+				4355C3162CA686B60079A539 /* iokit.h */,
+				4355C3172CA686B60079A539 /* krw.h */,
+				4355C3182CA686B60079A539 /* krw.c */,
+				4355C3192CA686B60079A539 /* puaf.h */,
+				4355C31A2CA686B60079A539 /* puaf.c */,
+				4355C31B2CA686B60079A539 /* surface.h */,
+				4355C31C2CA686B60079A539 /* surface.m */,
+			);
+			path = vertex;
+			sourceTree = "<group>";
+		};
 		8722907825D5BC40008E11FA = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +459,7 @@
 		F17AE28325F2CAAF00EFDD80 /* exploit */ = {
 			isa = PBXGroup;
 			children = (
+				4355C31D2CA686B60079A539 /* vertex */,
 				F17AE28925F2CAC700EFDD80 /* common */,
 				8722909E25D5BC5A008E11FA /* cicuta_virosa */,
 				F18579B72A92D970004AD2CD /* kfd */,
@@ -812,6 +847,11 @@
 				F17E751D25FF2E06008262A7 /* vnodeUtil.swift in Sources */,
 				F17E751E25FF2E06008262A7 /* entitleMe.swift in Sources */,
 				F1B78BBC27ED3FC600152952 /* ASN1Parser+IM4P.swift in Sources */,
+				4355C31E2CA686B60079A539 /* exploit.c in Sources */,
+				4355C31F2CA686B60079A539 /* info.m in Sources */,
+				4355C3202CA686B60079A539 /* surface.m in Sources */,
+				4355C3212CA686B60079A539 /* puaf.c in Sources */,
+				4355C3222CA686B60079A539 /* krw.c in Sources */,
 				F17E751F25FF2E06008262A7 /* signPAC.c in Sources */,
 				F17E752025FF2E06008262A7 /* electra.swift in Sources */,
 				F1B78BBB27ED3FC600152952 /* ASN1Parser.swift in Sources */,

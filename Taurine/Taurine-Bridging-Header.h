@@ -13,7 +13,9 @@
 #import "cicuta_virosa.h"
 #import <xpc/xpc.h>
 #include "jailbreak_daemonUser.h"
+#import "krw.h"
 
+int vertex_exploit_init(void);
 uint64_t do_kopen(uint64_t puaf_pages, uint64_t puaf_method, uint64_t kread_method, uint64_t kwrite_method);
 
 #define PROC_PIDPATHINFO_SIZE  (MAXPATHLEN)

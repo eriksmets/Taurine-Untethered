@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController interfaceStyle="dark" id="BYZ-38-t0r" customClass="ViewController" customModule="Taurine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Taurine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -646,7 +646,7 @@
                                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
                                                                             </imageView>
                                                                             <textField opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FRP-kA-Tb7">
-                                                                                <rect key="frame" x="15" y="13" width="187" height="18.5"/>
+                                                                                <rect key="frame" x="15" y="11" width="187" height="22"/>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -954,8 +954,48 @@
                                                                             <outlet property="checkmarkImage" destination="hSD-Sf-Hga" id="kZL-e3-Zqm"/>
                                                                         </connections>
                                                                     </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-ZO-j5T" customClass="SeparatorView" customModule="Taurine" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="134" width="217" height="1"/>
+                                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="R6U-bH-ofI"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7C-03-7Yt" customClass="ExploitSelectionButton" customModule="Taurine" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="135" width="217" height="44"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOs-dl-LIv">
+                                                                                <rect key="frame" x="15" y="10" width="157.5" height="24"/>
+                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" image="checkmark" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2y-Ci-vp6">
+                                                                                <rect key="frame" x="187.5" y="15.5" width="14.5" height="13.5"/>
+                                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="regular"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="t2y-Ci-vp6" firstAttribute="centerY" secondItem="N7C-03-7Yt" secondAttribute="centerY" id="5rN-nh-o4f"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="bOs-dl-LIv" secondAttribute="bottom" constant="10" id="BVt-d8-3BC"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="t2y-Ci-vp6" secondAttribute="trailing" constant="15" id="ELd-lk-Tti"/>
+                                                                            <constraint firstItem="bOs-dl-LIv" firstAttribute="top" secondItem="N7C-03-7Yt" secondAttribute="top" constant="10" id="H7K-uv-bNm"/>
+                                                                            <constraint firstAttribute="height" constant="44" id="Hfp-L7-kVA"/>
+                                                                            <constraint firstItem="bOs-dl-LIv" firstAttribute="leading" secondItem="N7C-03-7Yt" secondAttribute="leading" constant="15" id="HzK-4Y-vly"/>
+                                                                            <constraint firstItem="t2y-Ci-vp6" firstAttribute="leading" secondItem="bOs-dl-LIv" secondAttribute="trailing" constant="15" id="rCg-KR-Y5n"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultsKey" value="exploit"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultsValue" value="Vertex"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="notificationName" value="ExploitChangeNotification"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <outlet property="checkmarkImage" destination="t2y-Ci-vp6" id="JNh-az-aNT"/>
+                                                                        </connections>
+                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJr-Ky-fFg" userLabel="Clear View">
-                                                                        <rect key="frame" x="0.0" y="134" width="217" height="90"/>
+                                                                        <rect key="frame" x="0.0" y="179" width="217" height="45"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                 </subviews>
@@ -1511,7 +1551,7 @@
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colour One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJx-Ki-Ehy">
-                                                                                        <rect key="frame" x="15" y="10" width="73.5" height="24"/>
+                                                                                        <rect key="frame" x="15" y="10" width="86.5" height="24"/>
                                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1551,7 +1591,7 @@
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colour Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRh-RG-7l3">
-                                                                                        <rect key="frame" x="15" y="10" width="73" height="24"/>
+                                                                                        <rect key="frame" x="15" y="10" width="86" height="24"/>
                                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1591,7 +1631,7 @@
                                                                                         </userDefinedRuntimeAttributes>
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Colour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmF-qA-Lce" userLabel="Base Colour">
-                                                                                        <rect key="frame" x="15" y="10" width="78.5" height="24"/>
+                                                                                        <rect key="frame" x="15" y="10" width="92.5" height="24"/>
                                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1752,19 +1792,19 @@
                                 </subviews>
                             </stackView>
                             <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ars-hm-x9N">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ph4-4m-xDW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcZ-Jo-JQK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rUT-5c-i4f">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-xA-hj1">
-                                                        <rect key="frame" x="21" y="5" width="278.5" height="30"/>
+                                                        <rect key="frame" x="21" y="25" width="278.5" height="30"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Oh-k8-NgY">
                                                                 <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
@@ -1922,10 +1962,10 @@
     </scenes>
     <resources>
         <image name="Wordmark" width="200" height="35"/>
-        <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.down.circle" catalog="system" width="128" height="123"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="info.circle" catalog="system" width="128" height="123"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
